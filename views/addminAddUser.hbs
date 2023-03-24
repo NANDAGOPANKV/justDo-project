@@ -1,0 +1,61 @@
+<section
+  class="w-100 h-100 bg-success text-white d-flex flex-row justify-content-center align-items-center"
+>
+
+  <section
+    class="text-center border border-4 rounded w-25 p-2"
+    style="height: 40rem;"
+  >
+    <h1 class="pt-2 text-capitalize font-monospace fw-bold">add users.</h1>
+    <form action="/admin/adminadduser" method="post" class="mt-5">
+
+      <label
+        for=""
+        class="fs-5 fw-semibold text-capitalize font-monospace"
+      >name.</label><br />
+      <input
+        class="w-100 form-control font-monospace text-capitalize"
+        type="text"
+        name="username"
+        placeholder="enter name..."
+      /><br />
+      <label
+        for=""
+        class="fs-5 fw-semibold text-capitalize font-monospace"
+      >email.</label><br />
+      <input
+        class="w-100 form-control font-monospace text-capitalize"
+        type="email"
+        name="email"
+        placeholder="enter egmail..."
+      /><br />
+      <label
+        for=""
+        class="fs-5 fw-semibold text-capitalize font-monospace text-capitalize"
+      >phone.</label><br />
+      <input
+        class="w-100 form-control text-capitalize font-monospace"
+        type="tel"
+        name="phone"
+        placeholder="enter phone..."
+      /><br />
+      <label
+        for=""
+        class="fs-5 fw-semibold text-capitalize font-monospace text-capitalize"
+      >passcode.</label><br />
+      <input
+        class="w-100 form-control text-capitalize font-monospace"
+        type="password"
+        name="password"
+        placeholder="enter passcode..."
+      /><br /><br />
+
+      <input
+        class="btn btn-light w-100 text-primary fw-bold font-monospace"
+        type="submit"
+      />
+
+    </form>
+  </section>
+
+</section>

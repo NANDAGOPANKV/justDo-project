@@ -1,0 +1,64 @@
+<nav class="navbar bg-body-tertiary">
+  <div class="container-fluid d-flex align-items-center">
+    <section>
+      <a class="navbar-brand">{{adminName}}</a>
+    </section>
+    <section>
+      <form class="d-flex" role="search">
+        <input
+          class="form-control"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </section>
+    <section>
+      <button
+        class="btn btn-danger"
+        onclick="location.href='admin/signout'"
+      >signout</button>
+    </section>
+  </div>
+</nav>
+
+<h1 class="text-center p-2">Table</h1>
+<section class="m-5">
+  <button
+    class="btn btn-success text-center w-100"
+    onclick="location.href='/admin/adminadduser'"
+  >Add User</button>
+</section>
+
+<table class="table container">
+  <thead>
+    <tr class="text-center">
+      <th scope="col">Count</th>
+      <th scope="col">Name</th>
+      <th scope="col">Phone</th>
+
+      <th scope="col">Email</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  {{#each users}}
+    <tr class="text-center">
+      <td>{{@index}}</td>
+      <td>{{name}}</td>
+      <td>{{phone}}</td>
+      <td>{{email}}</td>
+      {{! update }}
+      <td><a href="/admin/update/{{_id}}"><i
+            class="fa-solid fa-pen-to-square"
+          ></i></a></td>
+      {{! delete }}
+      <td><a href="/admin/delete/{{_id}}"><i
+            class="fa-solid fa-trash"
+          ></i></a></td>
+
+    </tr>
+  {{/each}}
+
+</table>

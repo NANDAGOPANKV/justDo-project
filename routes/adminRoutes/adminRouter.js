@@ -35,7 +35,7 @@ router.get("/", adminCheckmiddleware, (req, res) => {
   }
 
   getUserData().then((data) => {
-    res.render("adminHome", { users: data, adminName });
+    res.render("adminHome", { users: data, adminName, admin: true });
   });
 });
 
@@ -63,13 +63,13 @@ router.get("/adminadduser", adminCheckmiddleware, (req, res) => {
 });
 
 // addmin add users/post
-router.post("/adminadduser", saveAdminUser);
+router.post("/adminadduser", adminCheckmiddleware, saveAdminUser);
 
 // delete user
 router.get("/delete/:id", deleteUser);
 
 // update user
-router.get("/update/:id", updateAccountFind);
+router.get("/update/:id", adminCheckmiddleware, updateAccountFind);
 
 // updated User
 router.post("/updatedUser/:id", updateAccount);

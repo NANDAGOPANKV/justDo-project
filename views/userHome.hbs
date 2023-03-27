@@ -1,3 +1,20 @@
-<h1>{{name}} welcome to the home page</h1>
+<header
+  class="w-100 h-25 bg-success text-light d-flex align-items-center p-3 font-monospace"
+>
+  <div>
+    <h1>Header</h1>
+  </div>
+  <div class="w-100 d-flex justify-content-end">
+    <a href="/signout">
+      <button
+        class="btn bg-dark text-light fw-bold"
+        onclick="return confirm(`are you sure to delete`) "
+      >SignOut</button>
+    </a>
+  </div>
 
-<button onclick="location.href = '/signout'">SignOut</button>
+</header>
+<section class="font-monospace text-center mt-5">
+
+  <h1 class="fw-semibold text-capitalize">{{name}} welcome to the home page</h1>
+</section>

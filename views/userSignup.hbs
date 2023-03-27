@@ -1,21 +1,128 @@
-<h1>userSignUp</h1>
+<section
+  class="w-100 h-100 bg-success text-white d-flex flex-row justify-content-center align-items-center"
+>
 
-<form action="/signup" method="post">
-  <label for="">name: </label>
-  <input type="text" name="username" placeholder="enter name..." /><br /><br />
-  <label for="">emil: </label>
-  <input type="email" name="email" value="@gmail.com" /><br /><br />
-  <label for="">password: </label>
-  <input type="password" name="password" placeholder="enter passcode" /><br
-  /><br />
-  <label for="">phone: </label>
-  <input type="number" name="phone" placeholder="enter phone" /><br /><br />
+  <section
+    class="text-center border border-4 rounded w-25 p-2"
+    style="height: 40rem;"
+  >
 
-  <input type="submit" />
+    {{#if exists}}
+      <h1 class="pt-2 text-capitalize font-monospace fw-bold">email already
+        exists</h1>
+      <p class="text-capitalize font-monospace text-danger">re enter again</p>
+    {{else}}
+      <h1 class="pt-2 text-capitalize font-monospace fw-bold">register here.</h1>
+    {{/if}}
 
-</form>
+    {{#if exists}}
+      <form action="/signup" method="post" class="mt-2">
 
-<h1>
-  already hold an account :
-  <button onclick="location.href='/signin'">Sign In</button>
-</h1>
+        <label
+          for=""
+          class="fs-5 fw-semibold text-capitalize font-monospace"
+        >name.</label><br />
+        <input
+          class="w-100 form-control font-monospace text-capitalize"
+          type="text"
+          name="username"
+          placeholder="enter name..."
+        /><br />
+        <label
+          for=""
+          class="fs-5 fw-semibold text-capitalize font-monospace"
+        >email.</label><br />
+        <input
+          class="w-100 form-control font-monospace text-capitalize"
+          type="email"
+          name="email"
+          placeholder="enter egmail..."
+        /><br />
+        <label
+          for=""
+          class="fs-5 fw-semibold text-capitalize font-monospace text-capitalize"
+        >phone.</label><br />
+        <input
+          class="w-100 form-control text-capitalize font-monospace"
+          type="tel"
+          name="phone"
+          placeholder="enter phone..."
+        /><br />
+        <label
+          for=""
+          class="fs-5 fw-semibold text-capitalize font-monospace text-capitalize"
+        >passcode.</label><br />
+        <input
+          class="w-100 form-control text-capitalize font-monospace"
+          type="password"
+          name="password"
+          placeholder="enter passcode..."
+        /><br /><br />
+
+        <input
+          class="btn btn-light w-100 text-primary fw-bold font-monospace"
+          type="submit"
+        />
+
+      </form>
+    {{else}}
+      <form action="/signup" method="post" class="mt-5">
+
+        <label
+          for=""
+          class="fs-5 fw-semibold text-capitalize font-monospace"
+        >name.</label><br />
+        <input
+          class="w-100 form-control font-monospace text-capitalize"
+          type="text"
+          name="username"
+          placeholder="enter name..."
+        /><br />
+        <label
+          for=""
+          class="fs-5 fw-semibold text-capitalize font-monospace"
+        >email.</label><br />
+        <input
+          class="w-100 form-control font-monospace text-capitalize"
+          type="email"
+          name="email"
+          placeholder="enter egmail..."
+        /><br />
+        <label
+          for=""
+          class="fs-5 fw-semibold text-capitalize font-monospace text-capitalize"
+        >phone.</label><br />
+        <input
+          class="w-100 form-control text-capitalize font-monospace"
+          type="tel"
+          name="phone"
+          placeholder="enter phone..."
+        /><br />
+        <label
+          for=""
+          class="fs-5 fw-semibold text-capitalize font-monospace text-capitalize"
+        >passcode.</label><br />
+        <input
+          class="w-100 form-control text-capitalize font-monospace"
+          type="password"
+          name="password"
+          placeholder="enter passcode..."
+        /><br /><br />
+
+        <input
+          class="btn btn-light w-100 text-primary fw-bold font-monospace"
+          type="submit"
+        />
+
+      </form>
+    {{/if}}
+    <h6>
+      already hold an account :
+      <button
+        class="btn text-dark underline text-capitalize"
+        onclick="location.href='/signin'"
+      >Sign in</button>
+    </h6>
+  </section>
+
+</section>

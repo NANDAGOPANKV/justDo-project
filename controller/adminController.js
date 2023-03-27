@@ -19,24 +19,34 @@ function usersList(req, res) {
 // save admin user
 const saveAdminUser = async (req, res) => {
   let userRes;
-  try {
+
+  let userReqObj = {
+    emailId: req.body.email,
+    password: req.body.password,
+    name: req.body.username,
+    phone: req.body.phone,
+  };
+
+  console.log(userReqObj);
+
+  const findSameUser = await User.findOne({ email: userReqObj.emailId });
+
+  if (findSameUser != null || findSameUser != undefined) {
+    res.render("addminAddUser", { exists: true });
+  } else {
     const users = new User({
-      name: req.body.username,
-      email: req.body.email,
-      password: req.body.password,
-      phone: req.body.phone,
+      name: userReqObj.name,
+      email: userReqObj.emailId,
+      password: userReqObj.password,
+      phone: userReqObj.phone,
     });
 
     userRes = await users.save();
-    console.log(userRes);
     req.session.userData = userRes;
     req.session.userLogged = true;
     res.redirect("/admin");
-  } catch (error) {
-    res.send(error.message);
   }
 };
-// save admin user
 
 const adminSignInControll = async (req, res) => {
   let adminObj = {

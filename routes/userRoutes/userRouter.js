@@ -3,7 +3,6 @@ const {
   saveUser,
   userSignInControll,
 } = require("../../controller/userController");
-const User = require("../../model/userModel");
 
 const router = express.Router();
 
@@ -45,6 +44,7 @@ router.post("/signup", saveUser);
 
 router.get("/signout", userCheckMiddleWare, (req, res) => {
   req.session.destroy();
+
   res.redirect("/signin");
 });
 

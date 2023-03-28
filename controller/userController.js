@@ -75,10 +75,7 @@ const userSignInControll = async (req, res) => {
       res.redirect("/");
     });
   } else {
-    sigIn().catch(() => {
-      // res.redirect("/signin");
-      res.render("userSignIn", { exists: true });
-    });
+    res.render("userSignIn", { exists: true });
   }
 };
 

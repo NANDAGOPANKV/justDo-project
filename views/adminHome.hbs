@@ -18,10 +18,14 @@
       </form>
     </section>
     <section>
-      <button
-        class="btn btn-danger font-monospace text-capitalize"
-        onclick="location.href='admin/signout'"
-      >signout</button>
+
+      <a href="/admin/signout">
+        <button
+          class="btn bg-dark text-light fw-bold"
+          onclick="return confirm(`are you sure to signout`) "
+        >SignOut</button>
+      </a>
+
     </section>
   </div>
 </nav>

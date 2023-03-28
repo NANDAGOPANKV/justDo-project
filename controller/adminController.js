@@ -27,8 +27,6 @@ const saveAdminUser = async (req, res) => {
     phone: req.body.phone,
   };
 
-  console.log(userReqObj);
-
   const findSameUser = await User.findOne({ email: userReqObj.emailId });
 
   if (findSameUser != null || findSameUser != undefined) {

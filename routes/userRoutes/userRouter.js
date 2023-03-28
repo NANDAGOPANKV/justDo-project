@@ -39,7 +39,7 @@ router.get("/signup", (req, res) => {
   }
 });
 
-router.post("/signup", userCheckMiddleWare, saveUser);
+router.post("/signup", saveUser);
 // req.session.user =
 
 router.get("/signout", userCheckMiddleWare, (req, res) => {

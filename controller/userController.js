@@ -71,9 +71,13 @@ const userSignInControll = async (req, res) => {
         checkingCondition();
       });
     }
-    sigIn().then(() => {
-      res.redirect("/");
-    });
+    sigIn()
+      .then(() => {
+        res.redirect("/");
+      })
+      .catch((err) => {
+        res.redirect("/signin")
+      });
   } else {
     res.render("userSignIn", { exists: true });
   }
